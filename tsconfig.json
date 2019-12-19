@@ -7,14 +7,15 @@
         },
         "module": "commonjs",
         "target": "es5",
+        "jsx": "react",    //在tsx文件里支持jsx
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "allowJs": true,
+        "lib": ["es2015", "dom", "es2015.promise"], //编译过程中需要引入的库文件的列表
     },
     "include": [
-        "src/ts/*",
-        "src/*"
+        "src/**/*"           //编译包含在  src及其子目录下的所有匹配的文件
     ],
     "exclude": [
         "node_modules",

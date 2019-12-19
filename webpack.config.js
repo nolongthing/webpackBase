@@ -1,11 +1,11 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const Merge = require("webpack-merge");
+// const Merge = require("webpack-merge");
 
 module.exports = {
     mode: 'development',
     //入口
-    entry: __dirname + '/src/index.ts',
+    entry: __dirname + '/src/index.tsx',
     //出口
     output: {
         path: __dirname + '/dist',
@@ -22,7 +22,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [".ts", ".js"],
+        extensions: [".ts", ".tsx", ".js"],    //添加支持的文件类型
         alias: {
             "@": __dirname + "/src",
             // "@component": __dirname + "src/component",

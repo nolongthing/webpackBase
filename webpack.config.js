@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     mode: 'development',
     //入口
-    entry: __dirname + '/src/index.tsx',
+    entry: __dirname + '/src/APP.tsx',
     //出口
     output: {
         path: __dirname + '/dist',
@@ -18,6 +18,14 @@ module.exports = {
                 use: {
                     loader: 'ts-loader'
                 }
+            },
+            { 
+                test:/\.less$/,
+                use: ['style-loader','css-loader','less-loader']
+            },
+            { 
+                test:/\.css$/,
+                use: ['style-loader','css-loader']
             },
         ]
     },

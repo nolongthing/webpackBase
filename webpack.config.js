@@ -10,6 +10,7 @@ module.exports = {
     output: {
         path: __dirname + '/dist',
         filename: 'bundle.js',
+        // publicPath: '/dist'
     },
     module: {
         rules: [
@@ -19,15 +20,20 @@ module.exports = {
                     loader: 'ts-loader'
                 }
             },
-            { 
-                test:/\.less$/,
-                use: ['style-loader','css-loader','less-loader']
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
             },
-            { 
-                test:/\.css$/,
-                use: ['style-loader','css-loader']
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
         ]
+    },
+    devServer: {
+        // historyApiFallback:true,
+        // inline: true,
+        contentBase: '/'
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js"],    //添加支持的文件类型
